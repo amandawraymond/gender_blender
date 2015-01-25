@@ -1,4 +1,5 @@
 class TrainersController < ApplicationController
+  
   before_action :set_trainer, only: [:show, :edit, :update, :destroy]
 
   # GET /trainers
@@ -62,17 +63,7 @@ class TrainersController < ApplicationController
   end
 
   def classifier
-    female_counter = 0
-    male_counter   = 0
-    Trainer.all.each do |trainer|
-      female_counter += 1 if trainer.gender = "female"
-      male_counter   += 1 if trainer.gender = "male"
-    end
-    if male_counter > 2 && female_counter > 2
-      @classifier_data = Trainer.set_classifier
-    else
-      @classifier_data = Trainer.set_default_classifier
-    end
+    @classifier = Trainer.classify
   end
 
   private
