@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'trainers#index'
+  resources :trainers
+  match '/classifier', to: 'trainers#classifier', via: 'get'
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

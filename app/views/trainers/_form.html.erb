@@ -1,0 +1,29 @@
+<%= form_for(@trainer) do |f| %>
+  <% if @trainer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trainer.errors.count, "error") %> prohibited this trainer from being saved:</h2>
+
+      <ul>
+      <% @trainer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gender %> (male or female)<br>
+    <%= f.text_field :gender, placeholder: "Male or Female" %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %> (lbs)<br>
+    <%= f.number_field :weight, step: 'any', placeholder: "Weight in Pounds" %>
+  </div>
+  <div class="field" placeholder="height in inches">
+    <%= f.label :height %> (inches)<br>
+    <%= f.number_field :height, step: 'any', placeholder: "Height in Inches" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
