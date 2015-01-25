@@ -1,0 +1,3 @@
+class Contestant
+  def 
+end
