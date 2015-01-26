@@ -1,4 +1,5 @@
 require 'descriptive_statistics'
+
 class CalculateClassifierService
   def initialize(data)
     @data = data

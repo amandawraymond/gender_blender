@@ -22,3 +22,5 @@ group :test do
   gem 'capybara', '2.2.0'
   gem 'factory_girl_rails', '4.2.0'
 end
+
+gem 'rails_12factor', group: :production
