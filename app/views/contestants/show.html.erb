@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contestant.name %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @contestant.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @contestant.weight %>
+</p>
+
+<%= link_to 'Edit', edit_contestant_path(@contestant) %> |
+<%= link_to 'Back', contestants_path %>

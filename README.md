@@ -7,3 +7,6 @@ naives bias = independent attributes
 gaussian 
 weight height integers
 can be only male or female
+MVC paradigm fat model/skinny controller to a point include N-tier with services to handle calculations
+gem descriptive_statistics used and forked with edits to handle these calculations
+add name for future- may help the old carnival genderblender's chancesr

@@ -1,3 +1,2 @@
-class Contestant
-  def 
+class Contestant < ActiveRecord::Base
 end
