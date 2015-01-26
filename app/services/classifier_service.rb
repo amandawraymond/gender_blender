@@ -1,21 +1,23 @@
-require 'descriptive_statistics'
-class CalculateClassifierService
-  def initialize(data)
-    @data = data
-    filter_data
-  end
+class ClassifierService
+  include DescriptiveStatistics
 
-  def calculate
-    if @male_data.length > 1 && @female_data.length > 1
-      classifier
-    else 
-      default_classifier
-    end
+  def self.calculate(data)
+    @data = data
+    ClassifierService.filter_data
+    ClassifierService.set_classifier
   end
 
   private 
 
-    def classifier
+    def self.set_classifier
+      if @male_data.length > 1 && @female_data.length > 1
+         ClassifierService.classifier
+      else 
+         ClassifierService.default_classifier
+      end
+    end
+
+    def self.classifier
       classifier_object = {
         male: {
           height: {
@@ -40,12 +42,12 @@ class CalculateClassifierService
       }
     end
 
-    def default_classifier
+    def self.default_classifier
       default_classifier_object = {
         male: {
           height: {
-            mean: 67.250,
-            variance: 26.9167
+            mean: 5.855,
+            variance: 0.035033
           },
           weight: {
             mean: 176.25,
@@ -54,8 +56,8 @@ class CalculateClassifierService
         },
         female: {
           height: {
-            mean: 65.0,
-            variance: 14.0
+            mean: 5.4175,
+            variance: 0.097225
           },
           weight: {
             mean: 132.5,
@@ -65,20 +67,20 @@ class CalculateClassifierService
       }
     end
 
-    def filter_data
-      @male_data          = gender_filter( "male"   )
-      @female_data        = gender_filter( "female" )
-      @male_height_data   = attribute_filter( "height", "male"  )
-      @female_height_data = attribute_filter( "height", "female") 
-      @male_weight_data   = attribute_filter( "weight", "male"  )
-      @female_weight_data = attribute_filter( "weight", "female")
+    def self.filter_data
+      @male_data          = ClassifierService.gender_filter( "male"   )
+      @female_data        = ClassifierService.gender_filter( "female" )
+      @male_height_data   = ClassifierService.attribute_filter( "height", "male"  )
+      @female_height_data = ClassifierService.attribute_filter( "height", "female") 
+      @male_weight_data   = ClassifierService.attribute_filter( "weight", "male"  )
+      @female_weight_data = ClassifierService.attribute_filter( "weight", "female")
     end
 
-    def gender_filter(gender)
+    def self.gender_filter(gender)
       @data.select { |data| data.gender == gender }
     end
 
-    def attribute_filter(attribute, gender)
+    def self.attribute_filter(attribute, gender)
       data = gender_filter(gender)
       if attribute ==  "height"
         data.map { |data| data.height }

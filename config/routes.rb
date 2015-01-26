@@ -2,7 +2,9 @@ Rails.application.routes.draw do  resources :trainers
   resources :trainers
   resources :contestants
 
-  match '/classifier', to: 'trainers#classifier', via: 'get'
+  match '/classifier', to: 'trainers#classifier'  , via: 'get'
+  match '/correct'   , to: 'contestants#correct'  , via: 'get'
+  match '/incorrect' , to: 'contestants#incorrect', via: 'get'
   
   root 'trainers#index'
   

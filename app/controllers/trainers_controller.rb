@@ -64,8 +64,8 @@ class TrainersController < ApplicationController
 
   def classifier
     training_data = Trainer.all
-    classifier    = CalculateClassifierService.new(training_data)
-    @classifier   = classifier.calculate
+    @classifier   = ClassifierService.calculate(training_data)
+    
   end 
 
   private

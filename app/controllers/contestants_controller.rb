@@ -10,6 +10,10 @@ class ContestantsController < ApplicationController
   # GET /contestants/1
   # GET /contestants/1.json
   def show
+    params = @contestant
+    test = PredictGenderService.new(params)
+    @prediction = test.prediction
+    @not_prediction = test.not_prediction
   end
 
   # GET /contestants/new
@@ -25,7 +29,6 @@ class ContestantsController < ApplicationController
   # POST /contestants.json
   def create
     @contestant = Contestant.new(contestant_params)
-
     respond_to do |format|
       if @contestant.save
         format.html { redirect_to @contestant, notice: 'Contestant was successfully created.' }
