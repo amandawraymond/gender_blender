@@ -24,4 +24,8 @@ group :test do
   gem 'factory_girl_rails', '4.2.0'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
