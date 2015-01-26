@@ -1,5 +1,5 @@
 class TrainersController < ApplicationController
-  
+  include TrainersHelper
   before_action :set_trainer, only: [:show, :edit, :update, :destroy]
 
   # GET /trainers
@@ -63,8 +63,10 @@ class TrainersController < ApplicationController
   end
 
   def classifier
-    @classifier = Trainer.classify
-  end
+    training_data = Trainer.all
+    classifier    = CalculateClassifierService.new(training_data)
+    @classifier   = classifier.calculate
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'descriptive_statistics', '~> 2.4.0', :require => 'descriptive_statistics/safe'
+gem 'descriptive_statistics', '~> 2.5.1', :require => 'descriptive_statistics/safe', :git => 'git://github.com/amandawraymond/descriptive_statistics', :branch => 'variance_to_sample_variance'
 
 group :development, :test do
   gem 'rspec-rails', '3.1.0'

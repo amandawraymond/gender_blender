@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/amandawraymond/descriptive_statistics
+  revision: 3a8161c3355ff31eb2a591b6d6aab39d7441d62c
+  branch: variance_to_sample_variance
+  specs:
+    descriptive_statistics (2.5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,7 +52,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    descriptive_statistics (2.4.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -161,7 +167,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.2.0)
   coffee-rails (~> 4.0.0)
-  descriptive_statistics (~> 2.4.0)
+  descriptive_statistics (~> 2.5.1)!
   factory_girl_rails (= 4.2.0)
   jbuilder (~> 2.0)
   jquery-rails

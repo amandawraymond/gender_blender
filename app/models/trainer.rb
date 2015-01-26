@@ -9,14 +9,7 @@ class Trainer < ActiveRecord::Base
     greater_than_or_equal_to: 20, less_than_or_equal_to: 108
   }
 
- def self.classify
-  trainers = Trainer.all
-  classifier = ClassifierCalulationsService.new(trainers)
-  classifier.get_calculations
- end
-   
   private
-
     def set_gender_phrasing
       male_phrasing = %w[m M male Male]
       if male_phrasing.include?(self.gender)
@@ -25,4 +18,5 @@ class Trainer < ActiveRecord::Base
         self.gender = "female"
       end
     end
+
 end
