@@ -1,5 +1,5 @@
+require 'descriptive_statistics'
 class ClassifierService
-  include DescriptiveStatistics
 
   def self.calculate(data)
     @data = data
@@ -46,8 +46,8 @@ class ClassifierService
       default_classifier_object = {
         male: {
           height: {
-            mean: 5.855,
-            variance: 0.035033
+            mean: 67.25,
+            variance: 26.9167
           },
           weight: {
             mean: 176.25,
@@ -56,8 +56,8 @@ class ClassifierService
         },
         female: {
           height: {
-            mean: 5.4175,
-            variance: 0.097225
+            mean: 65.0,
+            variance: 14.0
           },
           weight: {
             mean: 132.5,

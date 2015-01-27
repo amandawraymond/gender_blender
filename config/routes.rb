@@ -2,9 +2,9 @@ Rails.application.routes.draw do  resources :trainers
   resources :trainers
   resources :contestants
 
-  match '/classifier', to: 'trainers#classifier'  , via: 'get'
-  # match '/correct'   , to: 'contestants#correct'  , via: 'get'
-  # match '/incorrect' , to: 'contestants#incorrect', via: 'get'
+  get '/classifier'                          => 'trainers#classifier' 
+  get 'contestants/:id/correct_prediction'   => 'contestants#correct_prediction',   as: :correct_prediction
+  get 'contestants/:id/incorrect_prediction' => 'contestants#incorrect_prediction', as: :incorrect_prediction
   
   root 'contestants#new'
   

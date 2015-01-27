@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'spec_helper'
 
 RSpec.describe TrainersController, :type => :routing do
   describe "routing" do
@@ -29,6 +29,10 @@ RSpec.describe TrainersController, :type => :routing do
 
     it "routes to #destroy" do
       expect(:delete => "/trainers/1").to route_to("trainers#destroy", :id => "1")
+    end
+
+    it "routes to #classifier" do
+      expect(:get => "/classifier").to route_to("trainers#classifier")
     end
 
   end

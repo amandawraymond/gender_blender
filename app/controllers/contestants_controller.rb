@@ -10,10 +10,20 @@ class ContestantsController < ApplicationController
   # GET /contestants/1
   # GET /contestants/1.json
   def show
-    params = @contestant
-    test = PredictGenderService.new(params)
-    @prediction = test.prediction
-    @not_prediction = test.not_prediction
+    set_contestant
+    display_gender_prediction
+  end
+
+  def correct_prediction
+    set_contestant
+    get_gender_prediction
+    @test.save_prediction_as_trainer("correct")
+  end
+
+  def incorrect_prediction
+    set_contestant
+    get_gender_prediction
+    @test.save_prediction_as_trainer("incorrect")
   end
 
   # GET /contestants/new
@@ -65,6 +75,19 @@ class ContestantsController < ApplicationController
   end
 
   private
+
+    def display_gender_prediction
+      get_gender_prediction
+      @prediction        = @test.prediction
+      @not_prediction    = @test.not_prediction
+    end
+
+    def get_gender_prediction
+      contestant_data    = @contestant
+      classifier         = ClassifierService.calculate(Trainer.all) 
+      @test              = PredictGenderService.new(contestant_data, classifier)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_contestant
       @contestant = Contestant.find(params[:id])
