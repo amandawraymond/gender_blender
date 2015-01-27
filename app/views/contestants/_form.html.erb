@@ -1,4 +1,4 @@
-<%= form_for(@contestant) do |f| %>
+<%= form_for(@contestant) do |form| %>
   <% if @contestant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contestant.errors.count, "error") %> prohibited this contestant from being saved:</h2>
@@ -10,20 +10,23 @@
       </ul>
     </div>
   <% end %>
-
+  </br>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class:"text-center", placeholder: "Your Name"  %>
   </div>
+  </br>
+  <div class="field text-center">
+    <%= form.label :weight %> (lbs) <br>
+    <%= form.text_field :weight, class:"text-center", placeholder: "Weight in Pounds"  %>
+  </div>
+  </br>
   <div class="field">
-    <%= f.label :height %><br>
-    <%= f.text_field :height %>
+    <%= form.label :height %> (inches) <br>
+    <%= form.text_field :height, class:"text-center", placeholder: "Height in Inches"  %>
   </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-  </div>
+  </br>
   <div class="actions">
-    <%= f.submit %>
+      <%= form.submit 'PLAY', class:"btn btn-primary" %> 
   </div>
 <% end %>

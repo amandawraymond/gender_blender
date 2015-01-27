@@ -1,8 +1,17 @@
-<h1>New contestant</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', contestants_path %> |
-<%= link_to 'See Classifier Data', classifier_path %> |
-<%= link_to 'Train Computer', new_trainer_path %>
-<%= link_to 'Trainers List', trainers_path %>
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="jumbotron text-center col-sm-4">
+    <h1>Step Right UP...</h1>
+    <h3>Enter Your Information To Play</h3>
+    
+    <%= render 'form' %>
+    </br>
+    <%= link_to 'Add Trainer',        new_trainer_path %> |
+    <%= link_to 'Trainers List',      trainers_path    %> |
+    <%= link_to 'Contestants List',   contestants_path %> |
+    <%= link_to 'View Classifier',    classifier_path  %> 
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>

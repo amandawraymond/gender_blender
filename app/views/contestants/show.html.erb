@@ -1,34 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="row ">  
+  <div class="col-sm-3">
+  </div>
+  <div class="jumbotron text-center col-sm-6">
+    <h1>Drum Roll Please...</h1>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contestant.name %>
-</p>
+    <p>
+      The GeNdErBLeNdEr thinks that
+      <strong><%= @contestant.name.upcase %></strong> 
+    </p>
+    <p>
+      who weighs <strong><%= @contestant.weight %></strong> lbs 
+    </p>
 
-<p>
-  <strong>Height:</strong>
-  <%= @contestant.height %>
-</p>
+    <p>
+      and is <strong><%= @contestant.height %></strong> inches tall   
+    </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @contestant.weight %>
-</p>
+    <h2>
+      <strong>Is most likely....</strong>
+      <span id="prediction"><%= @prediction.upcase %></span>
+    </h2>
+    </br>
+    <div class="decision">
+      <%= button_to "CORRECT", correct_prediction_url(id: @contestant.id), 
+        class: "btn btn-primary btn-lg prediction-button", :method => :get %>
+      </br>
+      <%= button_to "INCORRECT", incorrect_prediction_url(id: @contestant.id), 
+        class: "btn btn-primary btn-lg prediction-button", :method => :get %>
+    </div>
+    </br>
+    </br>
+    <%= link_to 'Edit Contestant', edit_contestant_path(@contestant) %> |
+    <%= link_to 'Contestant List', contestants_path                  %> |
+    <%= link_to 'View Classifier', classifier_path                   %> |
+    <%= link_to 'Add Trainer',     new_trainer_path                  %> |
+    <%= link_to 'Trainers List',   trainers_path                     %>
 
-<p>
-  <strong>Gender Prediction:</strong>
-  <%= @prediction %>
-</p>
-
-
-
-<%= link_to 'Edit',                edit_contestant_path(@contestant) %> |
-<%= link_to 'Back',                contestants_path                  %> |
-<%= link_to 'See Classifier Data', classifier_path                   %> |
-<%= link_to 'Train Computer',      new_trainer_path                  %>
-<%= link_to 'Trainers List',       trainers_path                     %>
-</br>
-<%= link_to 'Correct',   correct_prediction_url(id: @contestant.id)  %> |
-<%= link_to 'InCorrect', incorrect_prediction_url(id: @contestant.id)%>
-
-
+  </div>
+  <div class="col-sm-3">
+  </div> 
+</div>
