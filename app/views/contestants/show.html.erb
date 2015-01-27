@@ -1,6 +1,6 @@
 <div class="row ">  
   <div class="col-sm-3"></div>
-  <div class="jumbotron text-center col-sm-6">
+  <div class="jumbotron text-center col-sm-6 ">
     <h1>Drum Roll Please...</h1>
     </br>
     <p>
@@ -11,14 +11,14 @@
       Is most likely a....
     </p>
     <p>
-      <strong><span id="prediction" class="text-primary"><%= @prediction.upcase %></span></strong>
+      <strong><span id="prediction" class="blink text-primary"><%= @prediction.upcase %></span></strong>
     </p>
     </br>
     <%= button_to "CORRECT", correct_prediction_url(id: @contestant.id), 
-      class: "btn btn-primary carnival-button", :method => :get %>
+      class: "btn btn-primary carnival-button ", :method => :get %>
     </br>
     <%= button_to "INCORRECT", incorrect_prediction_url(id: @contestant.id), 
-      class: "btn btn-primary carnival-button", :method => :get %>
+      class: "btn btn-primary carnival-button ", :method => :get %>
     </br>
     </br>
     <div class="navbar-fixed-bottom footer">

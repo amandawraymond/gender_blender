@@ -1,19 +1,36 @@
-<div class="row">
-  <div class="col-sm-3">
-  </div>
-  <div class="jumbotron text-center col-sm-6">
-    <h1>Step Right UP!!</h1>
-    
-    <%= render 'form' %>
-  
-
-    <div class="navbar-fixed-bottom footer">
-      <%= link_to 'Add Trainer',        new_trainer_path %> |
-      <%= link_to 'Trainers List',      trainers_path    %> |
-      <%= link_to 'Contestants List',   contestants_path %> |
-      <%= link_to 'View Classifier',    classifier_path  %> 
+<!-- Header -->
+<header class="header text-center">
+    <div id="jumbotron-title" class="text-vertical-center">     
+      </br>
+      <h1>Welcome to the...</h1>
+      </br>
+      <h1 class="title">GENDERBLENDER</h1>
+      </br>
+      <div style="padding-top: 4%;">  
+      </div>
+      <a href="/#play" class="btn btn-primary title-button">Begin</a>
     </div>
-  </div>
-  <div class="col-sm-3">
-  </div>
+</header>
+
+<!-- Spacing Top -->
+<div style="padding-top: 25%;">
+</div>
+
+<!-- Play -->
+<section id="play" class="play">
+    <div class="container">
+        <div class="container-fluid">
+          <div class="jumbotron text-center">
+            <h1 class="hand-written">Step Right Up!</h1>
+            </br>
+            <%= render 'form' %>
+            </br>
+          </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+
+<!-- Spacing Bottom -->
+<div style="padding-bottom: 25%;">
 </div>
