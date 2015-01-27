@@ -24,12 +24,17 @@
             <h1 class="hand-written">Step Right Up!</h1>
             </br>
             <%= render 'form' %>
-            </br>
           </div>
         </div>
     </div>
     <!-- /.container -->
 </section>
+<div class="text-center navbar-bottom footer">
+  <%= link_to 'Contestant List', contestants_path  %> |
+  <%= link_to 'View Classifier', classifier_path   %> |
+  <%= link_to 'Add Trainer',     new_trainer_path  %> |
+  <%= link_to 'Trainers List',   trainers_path     %>
+</div>
 
 <!-- Spacing Bottom -->
 <div style="padding-bottom: 25%;">
