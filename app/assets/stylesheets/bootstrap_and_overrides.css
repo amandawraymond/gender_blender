@@ -62,9 +62,12 @@
 }
 .chart {
   margin: auto;
-   th {
+  th {
     padding: 10px;
   }
+}
+table th {
+  padding: 10px;
 }
 .text-input {
   color: black;

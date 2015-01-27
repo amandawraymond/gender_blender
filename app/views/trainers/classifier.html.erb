@@ -1,13 +1,12 @@
 <div class="row">   
   <div class="col-sm-3"></div>
-  <div class="jumbotron text-center col-sm-7">
-    <h1>GenderBlender's Classifier</h1>
+  <div class="jumbotron text-center col-sm-5">
+    <h1>Classifier</h1>
     </br>
-    </br>
-    <table class="classifier">
+    <table class="chart">
       <thead>
-        <tr class="text-primary">
-          <th>Gender Sample</th>
+        <tr class="text-warning">
+          <th>Gender</th>
           <th>Height Mean</th>
           <th>Height Variance</th>
           <th>Weight Mean</th>
@@ -33,6 +32,8 @@
           </tr>
       </tbody>
     </table>
+    </br>
+    </br>
     <div class="text-center navbar-fixed-bottom footer">
       <%= link_to 'New Contestant',  new_contestant_path(anchor: "play") %> |
       <%= link_to 'Contestant List', contestants_path                    %> |
@@ -40,6 +41,6 @@
       <%= link_to 'Add Trainer',     new_trainer_path                    %> |
       <%= link_to 'Trainers List',   trainers_path                       %>
     </div>
-  <div class="col-sm-2"></div>
   </div>
+  <div class="col-sm-3"></div>
 </div>

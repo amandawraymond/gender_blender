@@ -26,9 +26,6 @@ class ContestantsController < ApplicationController
     @contestant = Contestant.new
   end
 
-  def edit
-  end
-
   def create
     @contestant = Contestant.new(contestant_params)
     respond_to do |format|

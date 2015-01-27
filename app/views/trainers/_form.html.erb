@@ -13,21 +13,21 @@
   </br>
   <div class="field">
     <%= f.label :gender %> (male or female)<br>
-    <%= f.text_field :gender, class:"text-center", placeholder: "Male or Female" %>
+    <%= f.text_field :gender, class:"text-center text-input", placeholder: "Male or Female" %>
   </div>
   </br>
   <div class="field">
     <%= f.label :weight %> (lbs)<br>
-    <%= f.number_field :weight, step: 'any', class:"text-center", placeholder: "Weight in Pounds" %>
+    <%= f.number_field :weight, step: 'any', class:"text-center text-input", placeholder: "Weight in Pounds" %>
   </div>
   </br>
   <div class="field" placeholder="height in inches">
     <%= f.label :height %> (inches)<br>
-    <%= f.number_field :height, step: 'any',class:"text-center", placeholder: "Height in Inches" %>
+    <%= f.number_field :height, step: 'any',class:"text-center text-input", placeholder: "Height in Inches" %>
   </div>
   </br>
   <div class="actions">
-    <%= f.submit 'ENTER', class:"btn btn-danger carnival-button" %>
+    <%= f.submit 'Add Trainer', class:"btn btn-danger carnival-button" %>
   </div>
   </br>
 <% end %>

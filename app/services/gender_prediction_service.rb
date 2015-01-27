@@ -1,13 +1,14 @@
 class GenderPredictionService
   
   def initialize(contestant_data)
-    @weight        = BigDecimal.new(contestant_data.weight)
-    @height        = BigDecimal.new(contestant_data.height)
+    @weight        = contestant_data.weight
+    @height        = contestant_data.height
     @classifier    = Classifier.new(Trainer.all).classifier
     make_prediction 
   end
 
   def prediction
+    nil_check 
     max_value = @posteriors.max_by{|key,value| value}
     max_value.first.to_s
   end
@@ -23,20 +24,8 @@ class GenderPredictionService
 
     private
 
-    def get_trainer_with_prediction(input)
-      if input == "correct"
-        trainer_with_prediction(prediction)
-      else 
-        trainer_with_prediction(not_prediction)
-      end
-    end
-
-    def trainer_with_prediction(gender_prediction)
-      Trainer.create({
-        gender: gender_prediction,
-        height: @height,
-        weight: @weight
-        })
+    def nil_check
+    @posteriors.delete_if { |key, value| value.nil? || value.nan? }
     end
 
     def make_prediction
@@ -66,6 +55,22 @@ class GenderPredictionService
 
     def probability_distribution_equation(variance, sample, mean)
       (1/(Math.sqrt(2*Math::PI*variance)))*Math.exp((-1 * (sample-mean)**2)/(2*variance))
+    end
+
+    def get_trainer_with_prediction(input)
+      if input == "correct"
+        trainer_with_prediction(prediction)
+      else 
+        trainer_with_prediction(not_prediction)
+      end
+    end
+
+    def trainer_with_prediction(gender_prediction)
+      Trainer.create({
+        gender: gender_prediction,
+        height: @height,
+        weight: @weight
+        })
     end
 
     def male_height_mean

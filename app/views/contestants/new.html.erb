@@ -30,10 +30,11 @@
     <!-- /.container -->
 </section>
 <div class="text-center navbar-bottom footer">
-  <%= link_to 'Contestant List', contestants_path  %> |
-  <%= link_to 'View Classifier', classifier_path   %> |
-  <%= link_to 'Add Trainer',     new_trainer_path  %> |
-  <%= link_to 'Trainers List',   trainers_path     %>
+  <%= link_to 'New Contestant',  new_contestant_path(anchor: "play") %> |
+  <%= link_to 'Contestant List', contestants_path                    %> |
+  <%= link_to 'View Classifier', classifier_path                     %> |
+  <%= link_to 'Add Trainer',     new_trainer_path                    %> |
+  <%= link_to 'Trainers List',   trainers_path                       %>
 </div>
 
 <!-- Spacing Bottom -->

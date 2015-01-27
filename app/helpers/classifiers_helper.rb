@@ -30,5 +30,4 @@ module ClassifiersHelper
   def female_weight_variance
     @classifier[:female][:weight][:variance]
   end
-
 end
