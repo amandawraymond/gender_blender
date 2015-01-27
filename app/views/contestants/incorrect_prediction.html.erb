@@ -1,16 +1,17 @@
 <div class="row">
   <div class="col-sm-4"></div>
-  <div class="jumbotron text-center col-sm-4">
-    <p class="text-warning">GenderBlender apologizes for being INCORRECT! </p>
+  <div class="jumbotron-prediction text-center col-sm-4">
+    <p class="text-default ">GenderBlender apologizes for being INCORRECT! </p>
     <p class="text-danger"> Better luck next time, corrected information will be saved to train the GenderBlender </p>
 
-    <div class="navbar-fixed-bottom">
-      <%= link_to 'New Contestant',  new_contestant_path %> |
-      <%= link_to 'Contestant List', contestants_path    %> |
-      <%= link_to 'View Classifier', classifier_path     %> |
-      <%= link_to 'Add Trainer',     new_trainer_path    %> |
-      <%= link_to 'Trainers List',   trainers_path       %>
-    </div>
+
+  </div>
+  <div class="text-center navbar-fixed-bottom footer">
+    <%= link_to 'New Contestant',  new_contestant_path %> |
+    <%= link_to 'Contestant List', contestants_path    %> |
+    <%= link_to 'View Classifier', classifier_path     %> |
+    <%= link_to 'Add Trainer',     new_trainer_path    %> |
+    <%= link_to 'Trainers List',   trainers_path       %>
   </div>
   <div class="col-sm-4"></div>
 </div>

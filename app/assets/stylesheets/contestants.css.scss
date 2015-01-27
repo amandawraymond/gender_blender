@@ -2,19 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.prediction-button {
-  width: 8em;
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0;  
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1
 }
-#prediction {
-  color: red;
-}
-.grey-link {
-  color: grey;
-}
-
-.jumbotron {
-  margin-top: 100px;
+.carnival-button {
+  width: 10em;
+  background-image: url(http://i.imgur.com/WhBQgn6.png?2) no-repeat center center fixed;
+  -webkit-border-radius: 200px; 
+  -moz-border-radius: 200px; 
+  border-radius: 200px;
+  color: white;
+  font-size: 1em;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 
 .chart {
@@ -23,4 +27,31 @@
     padding: 10px;
   }
 }
+#prediction {
+  font-size: 3em;
+}
 
+.classifier {
+  padding-right: 1000px;
+     th {
+    padding: 50px;
+  }
+}
+.footer {
+  font-size: 30px;
+  color: white;
+}
+.jumbotron-prediction {
+  padding: 30px 15px;
+  margin-top: 150px;
+  margin-bottom: 30px;
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 200px; 
+  -moz-border-radius: 200px; 
+  border-radius: 200px;
+  color: white;
+  font-size: 3em;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}

@@ -3,29 +3,26 @@
   </div>
   <div class="jumbotron text-center col-sm-6">
     <h1>Drum Roll Please...</h1>
+    </br>
     <p>
-      GENDERBLENDER thinks that
+      The GENDERBLENDER thinks that
       <strong><%= @contestant.name.upcase %></strong></br>
       who weighs <strong><%= @contestant.weight %></strong> lbs 
       and is <strong><%= @contestant.height %></strong> inches tall   
+      Is most likely a....
     </p>
-
-    <h2>
-      <strong>Is most likely....</strong>
-      <span id="prediction"><%= @prediction.upcase %></span>
-    </h2>
+    <p>
+      <strong><span id="prediction" class="text-primary"><%= @prediction.upcase %></span></strong>
+    </p>
+  </br>
+    <%= button_to "CORRECT", correct_prediction_url(id: @contestant.id), 
+      class: "btn btn-primary carnival-button", :method => :get %>
     </br>
-    <div class="decision">
-      <%= button_to "CORRECT", correct_prediction_url(id: @contestant.id), 
-        class: "btn btn-primary btn-lg prediction-button", :method => :get %>
-      </br>
-      <%= button_to "INCORRECT", incorrect_prediction_url(id: @contestant.id), 
-        class: "btn btn-primary btn-lg prediction-button", :method => :get %>
-    </div>
+    <%= button_to "INCORRECT", incorrect_prediction_url(id: @contestant.id), 
+      class: "btn btn-primary carnival-button", :method => :get %>
     </br>
     </br>
-    <div class="navbar-fixed-bottom">
-      <%= link_to 'Edit Contestant', edit_contestant_path(@contestant) %> |
+    <div class="navbar-fixed-bottom footer">
       <%= link_to 'Contestant List', contestants_path                  %> |
       <%= link_to 'View Classifier', classifier_path                   %> |
       <%= link_to 'Add Trainer',     new_trainer_path                  %> |

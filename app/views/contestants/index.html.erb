@@ -2,11 +2,11 @@
   <div class="col-sm-3"></div>
   <div class=" jumbotron text-center col-sm-6">
     <h1>Contestant List</h1>
-    <h4><%= @contestants.count %> people have played this game</h4>
+    <h4 class="text-danger"><%= @contestants.count %> people have played this game</h4>
     
-    <table class="table-striped chart col-sm-12">
+    <table class=" chart col-sm-12">
       <thead>
-        <tr class="text-warning">
+        <tr class="text-primary">
           <th>Name   </th>
           <th>Height </th>
           <th>Weight </th>
@@ -23,9 +23,9 @@
             <td><%= contestant.name   %></td>
             <td><%= contestant.height %></td>
             <td><%= contestant.weight %></td>
-            <td><%= link_to 'Show', contestant %></td> 
-            <td><%= link_to 'Edit', edit_contestant_path(contestant) %></td>
-            <td><%= link_to 'Destroy', contestant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', contestant, class:"text-warning"  %></td> 
+            <td><%= link_to 'Edit', edit_contestant_path(contestant), class:"text-warning"  %></td>
+            <td><%= link_to 'Destroy', contestant, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-warning"  %></td>
           </tr>
         <% end %>
       </tbody>

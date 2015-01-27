@@ -1,23 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row ">  
+  <div class="col-sm-3"></div>    
+  <div class="jumbotron text-center col-sm-6">
+    <h1>Selected Trainer</h1>
+    </br>
+    <p>
+      <strong>Gender:</strong>
+      <%= @trainer.gender %>
+    </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @trainer.gender %>
-</p>
+    <p>
+      <strong>Weight:</strong>
+      <%= @trainer.weight %>
+    </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @trainer.weight %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @trainer.height %>
-</p>
+    <p>
+      <strong>Height:</strong>
+      <%= @trainer.height %>
+    </p>
 
 
-<%= link_to 'Edit', edit_trainer_path(@trainer) %> |
-<%= link_to 'Back', trainers_path %> |
-<%= link_to 'Be a Contestant', new_contestant_path %> |
-<%= link_to 'See Classifier Data', classifier_path %> 
-
+    <div class="navbar-fixed-bottom footer">
+      <%= link_to 'Add Trainer',        new_trainer_path %> |
+      <%= link_to 'Trainers List',      trainers_path    %> |
+      <%= link_to 'Contestants List',   contestants_path %> |
+      <%= link_to 'View Classifier',    classifier_path  %> 
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div> 

@@ -111,7 +111,6 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-button,
 input,
 optgroup,
 select,
@@ -120,6 +119,7 @@ textarea {
   font: inherit;
   margin: 0;
 }
+
 button {
   overflow: visible;
 }
@@ -1079,7 +1079,6 @@ body {
   background-color: #ffffff;
 }
 input,
-button,
 select,
 textarea {
   font-family: inherit;
@@ -1090,6 +1089,7 @@ a {
   color: #dd4814;
   text-decoration: none;
 }
+
 a:hover,
 a:focus {
   color: #97310e;
@@ -2965,23 +2965,26 @@ select[multiple].form-group-lg .form-control {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: heavy;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   cursor: pointer;
-  background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 8px 12px;
-  font-size: 14px;
   line-height: 1.42857143;
-  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-border-radius: 200px; 
+  -moz-border-radius: 200px; 
+  border-radius: 200px;
+  color: white;
+  font-size: 1em;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 .btn:focus,
 .btn:active:focus,
@@ -4837,9 +4840,17 @@ a.badge:focus {
 }
 .jumbotron {
   padding: 30px 15px;
+  margin-top: 25px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 200px; 
+  -moz-border-radius: 200px; 
+  border-radius: 200px;
+  color: white;
+  font-size: 2em;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5695,6 +5706,7 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+
 }
 .modal-open {
   overflow: hidden;

@@ -3,9 +3,9 @@
   <div class="jumbotron text-center col-sm-6">    
     <h1>Trainer List</h1>
 
-    <table class="chart table-striped">
+    <table class="chart">
       <thead>
-        <tr class="text-warning">
+        <tr class="text-primary">
           <th>Gender</th>
           <th>Weight</th>
           <th>Height</th>
@@ -22,16 +22,16 @@
             <td><%= trainer.gender %></td>
             <td><%= trainer.weight %></td>
             <td><%= trainer.height %></td>
-            <td><%= link_to 'Show', trainer %></td>
-            <td><%= link_to 'Edit', edit_trainer_path(trainer) %></td>
-            <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', trainer, class:"text-warning" %></td>
+            <td><%= link_to 'Edit', edit_trainer_path(trainer), class:"text-warning"  %></td>
+            <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-warning"  %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <div class="navbar-fixed-bottom">
+    <div class="navbar-fixed-bottom footer ">
       <%= link_to 'Add Trainer',     new_trainer_path    %> |
       <%= link_to 'New Contestant',  new_contestant_path %> |
       <%= link_to 'Contestant List', contestants_path    %> |

@@ -17,3 +17,7 @@ included services to handle calculations
 kept model and controller skinny
 gave calculations to services to handle
 https://blog.engineyard.com/2014/keeping-your-rails-controllers-dry-with-services
+
+improvements:
+unit testing for services
+move services into a gem

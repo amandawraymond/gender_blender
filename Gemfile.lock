@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/amandawraymond/descriptive_statistics
-  revision: 3a8161c3355ff31eb2a591b6d6aab39d7441d62c
+  revision: 74c195768ebb0e67aeca80b1153e9a4d191939a2
   branch: variance_to_sample_variance
   specs:
     descriptive_statistics (2.5.1)
