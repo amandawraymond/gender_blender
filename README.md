@@ -24,7 +24,7 @@ Check it out at [GenderBlender](https://genderblender.herokuapp.com) and [Github
 ##Improvements
 * Unit testing in Rspec for calculations/ improved TDD practices
 * Wrap gender predictin/naive bayes calculations in a gem for community re-use
-* Front-end design and styling
+* Front-end design and styling (MAKE MOBILE RESPONSIVE)
 
 
 ##Assignment
