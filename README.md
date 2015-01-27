@@ -14,6 +14,6 @@ limits of height and weight based on world records
 
 MVC paradigm to a point - 
 included services to handle calculations
-
-services
+kept model and controller skinny
+gave calculations to services to handle
 https://blog.engineyard.com/2014/keeping-your-rails-controllers-dry-with-services

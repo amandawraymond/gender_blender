@@ -11,13 +11,13 @@ class ClassifierService
 
     def self.set_classifier
       if @male_data.length > 1 && @female_data.length > 1
-         ClassifierService.classifier
+         ClassifierService.custom_classifier
       else 
-         ClassifierService.default_classifier
+         ClassifierService.standard_classifier
       end
     end
 
-    def self.classifier
+    def self.custom_classifier
       classifier_object = {
         male: {
           height: {
@@ -42,7 +42,7 @@ class ClassifierService
       }
     end
 
-    def self.default_classifier
+    def self.standard_classifier
       default_classifier_object = {
         male: {
           height: {

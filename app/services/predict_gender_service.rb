@@ -12,7 +12,7 @@ class PredictGenderService
   end
 
   def not_prediction
-    min_value = @posteriors.max_by{|key,value| value}
+    min_value = @posteriors.min_by{|key,value| value}
     min_value.first.to_s
   end
 
