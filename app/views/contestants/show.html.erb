@@ -3,17 +3,10 @@
   </div>
   <div class="jumbotron text-center col-sm-6">
     <h1>Drum Roll Please...</h1>
-    <p id="notice"><%= notice %></p>
-
     <p>
-      The GeNdErBLeNdEr thinks that
-      <strong><%= @contestant.name.upcase %></strong> 
-    </p>
-    <p>
+      GENDERBLENDER thinks that
+      <strong><%= @contestant.name.upcase %></strong></br>
       who weighs <strong><%= @contestant.weight %></strong> lbs 
-    </p>
-
-    <p>
       and is <strong><%= @contestant.height %></strong> inches tall   
     </p>
 
@@ -31,12 +24,13 @@
     </div>
     </br>
     </br>
-    <%= link_to 'Edit Contestant', edit_contestant_path(@contestant) %> |
-    <%= link_to 'Contestant List', contestants_path                  %> |
-    <%= link_to 'View Classifier', classifier_path                   %> |
-    <%= link_to 'Add Trainer',     new_trainer_path                  %> |
-    <%= link_to 'Trainers List',   trainers_path                     %>
-
+    <div class="navbar-fixed-bottom">
+      <%= link_to 'Edit Contestant', edit_contestant_path(@contestant) %> |
+      <%= link_to 'Contestant List', contestants_path                  %> |
+      <%= link_to 'View Classifier', classifier_path                   %> |
+      <%= link_to 'Add Trainer',     new_trainer_path                  %> |
+      <%= link_to 'Trainers List',   trainers_path                     %>
+    </div>
   </div>
   <div class="col-sm-3">
   </div> 

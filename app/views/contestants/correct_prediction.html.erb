@@ -1,6 +1,16 @@
-<p>gender blender was correct! added to training data</p>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="jumbotron text-center col-sm-4">
+    <p class="text-warning">Hooray GenderBlender is so SMART! </p>
+    <p class="text-danger"> Your information will be saved to train the GENDERBLENDER to be even smarter</p>
 
-<%= link_to 'See Classifier Data', classifier_path                   %> |
-<%= link_to 'Train Computer',      new_trainer_path                  %>
-<%= link_to 'Be a Contestant', new_contestant_path %>
-<%= link_to 'Trainers List', trainers_path %>
+    <div class="navbar-fixed-bottom">
+      <%= link_to 'New Contestant',  new_contestant_path %> |
+      <%= link_to 'Contestant List', contestants_path    %> |
+      <%= link_to 'View Classifier', classifier_path     %> |
+      <%= link_to 'Add Trainer',     new_trainer_path    %> |
+      <%= link_to 'Trainers List',   trainers_path       %>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>

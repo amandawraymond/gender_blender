@@ -55,8 +55,6 @@ class PredictGenderService
       female_probability * probability_density(female_height_variance, @height, female_height_mean) * probability_density(female_weight_variance, @weight, female_weight_mean)
     end
     
-    # probability densities not DRY for readability
-
     def probability_density(variance, sample, mean)
       probability_distribution_equation(variance, sample, mean)
     end

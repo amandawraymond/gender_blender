@@ -1,32 +1,43 @@
-<h1>Listing trainers</h1>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="jumbotron text-center col-sm-6">    
+    <h1>Trainer List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Gender</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table class="chart table-striped">
+      <thead>
+        <tr class="text-warning">
+          <th>Gender</th>
+          <th>Weight</th>
+          <th>Height</th>
+          <th>Show</th>
+          <th>Edit</th>
+          <th>Destroy</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @trainers.each do |trainer| %>
-      <tr>
-        <td><%= trainer.gender %></td>
-        <td><%= trainer.weight %></td>
-        <td><%= trainer.height %></td>
-        <td><%= link_to 'Show', trainer %></td>
-        <td><%= link_to 'Edit', edit_trainer_path(trainer) %></td>
-        <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @trainers.each do |trainer| %>
+          <tr>
+            <td><%= trainer.gender %></td>
+            <td><%= trainer.weight %></td>
+            <td><%= trainer.height %></td>
+            <td><%= link_to 'Show', trainer %></td>
+            <td><%= link_to 'Edit', edit_trainer_path(trainer) %></td>
+            <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
-
-<%= link_to 'Train Computer', new_trainer_path %> |
-<%= link_to 'Be a Contestant', new_contestant_path %> |
-<%= link_to 'See Classifier Data', classifier_path %> 
+    <br>
+    <div class="navbar-fixed-bottom">
+      <%= link_to 'Add Trainer',     new_trainer_path    %> |
+      <%= link_to 'New Contestant',  new_contestant_path %> |
+      <%= link_to 'Contestant List', contestants_path    %> |
+      <%= link_to 'View Classifier', classifier_path     %>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div> 
 

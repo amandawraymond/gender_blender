@@ -1,35 +1,45 @@
-<h1>Classifier from Training Data</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Gender</th>
-      <th>Height Mean</th>
-      <th>Height Variance</th>
-      <th>Weight Mean</th>
-      <th>Weight Variance</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+<div class="row">   
+  <div class="col-sm-3"></div>
+  <div class="jumbotron text-center col-sm-6">
+    <h1>Classifier</h1>
+    </br>
+    <table class="chart table-striped">
+      <thead>
+        <tr class="text-warning">
+          <th>Gender</th>
+          <th>Height Mean</th>
+          <th>Height Variance</th>
+          <th>Weight Mean</th>
+          <th>Weight Variance</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-      <tr>
-        <td>male</td>
-        <td><%=  male_height_mean      %></td>
-        <td><%=  male_height_variance  %></td>
-        <td><%=  male_weight_mean      %></td>
-        <td><%=  male_weight_variance  %></td>
-      </tr>
-      <tr>
-        <td>female</td>
-        <td><%= female_height_mean     %></td>
-        <td><%= female_height_variance %></td>
-        <td><%= female_weight_mean     %></td>
-        <td><%= female_weight_variance %></td>
-      </tr>
-  </tbody>
-</table>
-
-<%= link_to 'Train Computer', new_trainer_path %> |
-<%= link_to 'Be a Contestant', new_contestant_path %> |
-<%= link_to 'See Classifier Data', classifier_path %> 
-<%= link_to 'Trainers List', trainers_path %>
+      <tbody>
+          <tr>
+            <td>male</td>
+            <td><%=  male_height_mean      %></td>
+            <td><%=  male_height_variance  %></td>
+            <td><%=  male_weight_mean      %></td>
+            <td><%=  male_weight_variance  %></td>
+          </tr>
+          <tr>
+            <td>female</td>
+            <td><%= female_height_mean     %></td>
+            <td><%= female_height_variance %></td>
+            <td><%= female_weight_mean     %></td>
+            <td><%= female_weight_variance %></td>
+          </tr>
+      </tbody>
+    </table>
+    </br>
+    </br>
+    <div class="navbar-fixed-bottom">
+      <%= link_to 'Contestant List', contestants_path                  %> |
+      <%= link_to 'New Contestant',  new_contestant_path               %> |
+      <%= link_to 'Add Trainer',     new_trainer_path                  %> |
+      <%= link_to 'Trainers List',   trainers_path                     %>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

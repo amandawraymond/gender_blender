@@ -1,17 +1,19 @@
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
-  <div class="jumbotron text-center col-sm-4">
+  <div class="jumbotron text-center col-sm-6">
     <h1>Step Right UP...</h1>
     <h3>Enter Your Information To Play</h3>
     
     <%= render 'form' %>
     </br>
-    <%= link_to 'Add Trainer',        new_trainer_path %> |
-    <%= link_to 'Trainers List',      trainers_path    %> |
-    <%= link_to 'Contestants List',   contestants_path %> |
-    <%= link_to 'View Classifier',    classifier_path  %> 
+    <div class="navbar-fixed-bottom">
+      <%= link_to 'Add Trainer',        new_trainer_path %> |
+      <%= link_to 'Trainers List',      trainers_path    %> |
+      <%= link_to 'Contestants List',   contestants_path %> |
+      <%= link_to 'View Classifier',    classifier_path  %> 
+    </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   </div>
 </div>
