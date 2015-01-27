@@ -1,5 +1,4 @@
 class TrainersController < ApplicationController
-  include TrainersHelper
   before_action :set_trainer, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -33,8 +32,7 @@ class TrainersController < ApplicationController
       if @trainer.update(trainer_params)
         format.html { redirect_to @trainer }
       else
-        format.html { render :edit }
-      
+        format.html { render :edit }  
       end
     end
   end
@@ -46,11 +44,6 @@ class TrainersController < ApplicationController
     end
   end
 
-  def classifier
-    training_data = Trainer.all
-    @classifier   = ClassifierService.calculate(training_data)
-    
-  end 
 
   private
     def set_trainer

@@ -1,9 +1,10 @@
-class PredictGenderService
-  def initialize(contestant_data, classifier)
-    @weight             = BigDecimal.new(contestant_data.weight)
-    @height             = BigDecimal.new(contestant_data.height)
-    @classifier         = classifier  
-    predict
+class GenderPredictionService
+  
+  def initialize(contestant_data)
+    @weight        = BigDecimal.new(contestant_data.weight)
+    @height        = BigDecimal.new(contestant_data.height)
+    @classifier    = Classifier.new(Trainer.all).classifier
+    make_prediction 
   end
 
   def prediction
@@ -17,24 +18,28 @@ class PredictGenderService
   end
 
   def save_prediction_as_trainer(input)
-    if input == "correct"
-      Trainer.create({
-        gender: prediction,
-        height: @height,
-        weight: @weight
-        })
-    else 
-      Trainer.create({
-        gender: not_prediction,
-        height: @height,
-        weight: @weight
-        })
-    end
+    get_trainer_with_prediction(input)
   end
 
     private
 
-    def predict
+    def get_trainer_with_prediction(input)
+      if input == "correct"
+        trainer_with_prediction(prediction)
+      else 
+        trainer_with_prediction(not_prediction)
+      end
+    end
+
+    def trainer_with_prediction(gender_prediction)
+      Trainer.create({
+        gender: gender_prediction,
+        height: @height,
+        weight: @weight
+        })
+    end
+
+    def make_prediction
       calculate_posteriors
     end
 

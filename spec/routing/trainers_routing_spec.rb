@@ -32,7 +32,7 @@ RSpec.describe TrainersController, :type => :routing do
     end
 
     it "routes to #classifier" do
-      expect(:get => "/classifier").to route_to("trainers#classifier")
+      expect(:get => "/classifier").to route_to("classifier#classifier")
     end
 
   end

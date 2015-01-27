@@ -7,7 +7,7 @@ class ContestantsController < ApplicationController
 
   def show
     set_contestant
-    display_gender_prediction
+    get_gender_prediction
   end
 
   def correct_prediction
@@ -59,16 +59,10 @@ class ContestantsController < ApplicationController
 
   private
 
-    def display_gender_prediction
-      get_gender_prediction
-      @prediction        = @test.prediction
-      @not_prediction    = @test.not_prediction
-    end
-
     def get_gender_prediction
-      contestant_data    = @contestant
-      classifier         = ClassifierService.calculate(Trainer.all) 
-      @test              = PredictGenderService.new(contestant_data, classifier)
+      contestant_data = @contestant
+      @test           = GenderPredictionService.new(contestant_data)
+      @prediction     = @test.prediction
     end
 
     def set_contestant

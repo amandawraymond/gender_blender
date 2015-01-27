@@ -1,4 +1,4 @@
-module TrainersHelper
+module ClassifiersHelper
   def male_height_mean
     @classifier[:male][:height][:mean]
   end
